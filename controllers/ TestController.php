@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\models\Pop_Point;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -18,3 +17,5 @@ use yii\web\Controller;
  }
  $new = new TestController('mhammadtreza');
  print_r($new);
+
+
