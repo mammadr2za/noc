@@ -81,17 +81,14 @@ class ServicetypeController extends Controller
     public function actionDelete($id)
     {
         $servicetype = Servicetype::findOne($id);
-
-        // بررسی استفاده شدن رکورد
+       
         if ($servicetype->pop_Point && $servicetype->pop_Point->is_used) {
 
-            // نمایش پیغام خطا
             Yii::$app->session->setFlash('error', 'این رکورد قابل حذف نیست زیرا از آن استفاده شده است.');
 
             return $this->redirect(['/servicetype/show']);
         }
 
-        // حذف رکورد
         $servicetype->delete();
 
         return $this->redirect(['/servicetype/show']);
